@@ -5,14 +5,16 @@ const M= Material.suma([6,50]);
 function ResolverSueldo(Persona,Hora,Precio,Material) {
 
     console.log("Numero de empleados: " + Persona)
-    
-	console.log(
-		"Horas de cada empleados"  + Hora + "\n" +
-		"Precio por cada empleado" + Precio);
+
+	console.log (
+		"Horas de cada empleado: "  + Hora + "\n" +
+		"Precio por cada empleado: " + "$"+ Precio);
 
     
 
 	sueldo(Persona,Hora,Precio,Material, (err,mm)=>{
+
+
 		if (err){
 			console.log("Error", error.message);
 		}
@@ -20,12 +22,16 @@ function ResolverSueldo(Persona,Hora,Precio,Material) {
 
 
 			console.log("El numero de horas por el empleado es = "
-                + Hora + " con el precio por hora = "+ Precio + " Obteniendo  sueldo total = "   + mm.Total());
+                + Hora + " con el precio por hora = "+ "$" + Precio + " Obteniendo  sueldo total = "   + "$"+ mm.Total());
 
 	
-			console.log("y con un total de gastos en materiales de: "+ M);
-			console.log("Obteniendo el costo total por una cantidad de: "+ mm.Sumatoria());
-			console.log("Obteniendo Una holgura del 8% : " + mm.Holgura());
+			console.log("y con un total de gastos en materiales de: "+ "$" + M);
+
+
+			console.log("Obteniendo el costo total por una cantidad de: "+"$"+ mm.Sumatoria());
+
+
+			console.log("Obteniendo Una holgura del 8% : " + "$" + mm.Holgura());
 		}
 	});
 
@@ -33,4 +39,4 @@ function ResolverSueldo(Persona,Hora,Precio,Material) {
 
 
 
-ResolverSueldo(5,8,15,M);
+ResolverSueldo(6,8,15,M);
