@@ -1,26 +1,36 @@
+var sueldo=require('./sueldo');
+var Material=require('./Material');
 
-var hola = require('./hola');
+const M= Material.suma([6,50]);
+function ResolverSueldo(Persona,Hora,Precio,Material) {
 
-function ResolverSueldo(l,b) {
-    console.log("Resolviendo el empleado con numero de horas = "
-                + l + " y el precio por horas = " + b );
-    hola(l,b, (err,parceInt) => {
-        if (err) {
-            console.log("ERROR: ", err.message);
-        }
-        else {
-            console.log("El numero de horas por el empleado es = "
-                + l + " con el precio por hora = "+ b + " Obteniendo  sueldo total = "   + parceInt.TotalSueldo());
+    console.log("Numero de empleados: " + Persona)
+    
+	console.log(
+		"Horas de cada empleados"  + Hora + "\n" +
+		"Precio por cada empleado" + Precio);
 
-        
-        }
+    
 
-
-    });
-    console.log("esta declaración despues de la llamada a TotalSueldo()");
-};
+	sueldo(Persona,Hora,Precio,Material, (err,mm)=>{
+		if (err){
+			console.log("Error", error.message);
+		}
+		else{
 
 
-ResolverSueldo(2,8);
-ResolverSueldo(4,12);
-ResolverSueldo(3,5);
+			console.log("El numero de horas por el empleado es = "
+                + Hora + " con el precio por hora = "+ Precio + " Obteniendo  sueldo total = "   + mm.Total());
+
+	
+			console.log("y con un total de gastos en materiales de: "+ M);
+			console.log("Obteniendo el costo total por una cantidad de: "+ mm.Sumatoria());
+			console.log("Obteniendo Una holgura del 8% : " + mm.Holgura());
+		}
+	});
+
+}
+
+
+
+ResolverSueldo(5,8,15,M);
