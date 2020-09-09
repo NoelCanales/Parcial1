@@ -7,8 +7,8 @@ function ResolverSueldo(Persona,Hora,Precio,Material) {
     console.log("Numero de empleados: " + Persona)
     
 	console.log(
-		"Horas de cada empleados"  + Hora + "\n" +
-		"Precio por cada empleado" + Precio);
+		"Horas de cada empleados: "  + Hora + "\n" +
+		"Precio por cada empleado: " + Precio);
 
     
 
@@ -33,4 +33,4 @@ function ResolverSueldo(Persona,Hora,Precio,Material) {
 
 
 
-ResolverSueldo(5,8,15,M);
+ResolverSueldo(6,8,15,M);
